@@ -71,7 +71,15 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
-
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules":{
+        "no-unused-vars":"off",
+        "no-array-constructor":"off",
+        "eqeqeq":"off",
+        "no-redeclare":"off"
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
