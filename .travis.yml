@@ -8,3 +8,18 @@ before_script:
   
 script:
  - npm run build
+
+
+after_script:
+  - cd ./dist
+  - git init
+  - git config user.name "yyf1994gggg"
+  - git config user.email "602875520@qq.com"
+  - git add .
+  - git commit -m "Update docs"
+  - git push --force --quiet "https://${Travis_Token}@${GH_REF}" master:master
+
+
+env:
+ global:
+   - GH_REF: github.com/yyf1994gggg/yyf1994gggg.github.io.git
