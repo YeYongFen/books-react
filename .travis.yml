@@ -1,7 +1,9 @@
 language: node_js
 node_js:
   - "8"
-  
+
+dist: trusty                  # 指定系统版本，trusty 是指 Ubuntu 14.04 发行版的名称
+sudo: required                # 是否需要 sudo 权限
  
 before_script:
  - npm install
@@ -12,6 +14,7 @@ script:
 
 after_script:
   - cd ./dist
+  - echo 'yong.zone' >CNAME
   - git init
   - git config user.name "yyf1994gggg"
   - git config user.email "602875520@qq.com"
